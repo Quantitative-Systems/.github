@@ -3,7 +3,7 @@
 Institutional-Grade Quantitative Research & Algorithmic Trading Infrastructure
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Quantitative-Systems/.github/main/assets/qs-banner.png" alt="Quantitative Systems banner" width="100%" />
+  <img src="https://raw.githubusercontent.com/Quantitative-Systems/.github/main/assets/qs-banner.svg" alt="Quantitative Systems banner" width="100%" />
 </div>
 
 ---
@@ -21,7 +21,7 @@ We specialize in:
 
 ---
 
-## Core Platforms
+## Platform Portfolio
 
 ### Crypto Platform
 Autonomous cryptocurrency trading platform for quantitative research, market intelligence, risk management, execution, and continuous strategy evolution.
@@ -35,40 +35,17 @@ Institutional-grade foreign exchange platform for systematic research, session m
 
 ---
 
-## System Architecture
+## Architecture
 
-```text
-+----------------------------------------------------------------------------------+
-|                          Quantitative Systems Stack                                |
-+----------------------------------------------------------------------------------+
-
-  Market Data Layer                  Research Layer                        Execution Layer
-  -----------------                 --------------------                 --------------------
-  +----------------+               +----------------+                 +----------------+
-  | Tick / OHLC    |               | Strategy       |                 | Order Router   |
-  | Feed Handler   | <-------->    | Engine         | <-------->      | & Broker API   |
-  | Replay Engine  |               | Risk Engine    |                 | Gateway        |
-  +----------------+               +----------------+                 +----------------+
-           |                                  |                                   |
-           v                                  v                                   v
-  +----------------+               +----------------+                 +----------------+
-  | Validation     |               | Backtest /     |                 | Execution      |
-  | & Normalization|               | Simulation     |                 | Monitoring     |
-  | Pipeline       |               | Engine         |                 | & Reconciliation|
-  +----------------+               +----------------+                 +----------------+
-           |                                  |
-           +------------------+---------------+
-                              v
-                  +----------------------+
-                  | Risk & Portfolio     |
-                  | Governance Engine     |
-                  +----------------------+
-                              |
-                              v
-                  +----------------------+
-                  | Audit / telemetry    |
-                  | / dashboards          |
-                  +----------------------+
+```mermaid
+flowchart LR
+    A[Market Data Feeds] --> B[Normalization & Validation]
+    B --> C[Research Engine]
+    C --> D[Backtests & Simulation]
+    D --> E[Risk & Portfolio Controls]
+    E --> F[Execution Layer]
+    F --> G[Monitoring & Reconciliation]
+    G --> H[Continuous Strategy Improvement]
 ```
 
 ---
@@ -77,25 +54,30 @@ Institutional-grade foreign exchange platform for systematic research, session m
 
 ```text
 Strategy Idea
-     |
-     v
+     ↓
 Data Collection & Normalization
-     |
-     v
+     ↓
 Research / Simulation / Backtesting
-     |
-     v
+     ↓
 Risk, Exposure & Portfolio Controls
-     |
-     v
+     ↓
 Execution & Market Monitoring
-     |
-     v
+     ↓
 Performance Attribution & Reconciliation
-     |
-     v
+     ↓
 Continuous Strategy Improvement
 ```
+
+---
+
+## Core Capabilities
+
+- Systematic strategy research
+- Market data ingestion and replay
+- Execution infrastructure
+- Risk monitoring and governance
+- Multi-asset trading intelligence
+- Financial reconciliation and auditability
 
 ---
 
@@ -106,17 +88,6 @@ Continuous Strategy Improvement
 - Lock-free IPC and shared memory architectures
 - Deterministic replay and point-in-time-safe data processing
 - Low-latency, high-throughput execution infrastructure
-
----
-
-## Capabilities
-
-- Systematic strategy research
-- Market data ingestion and replay
-- Execution infrastructure
-- Risk monitoring and governance
-- Multi-asset trading intelligence
-- Financial reconciliation and auditability
 
 ---
 
@@ -133,10 +104,9 @@ Continuous Strategy Improvement
 ## Contribution Model
 
 ```text
-Research     ->  Validation    ->  Risk Controls    ->  Production
-   |               |                  |                       |
-   v               v                  v                       v
-Backtests     ->  CI / QA       ->  Execution Guardrails -> Live System
+Research     →  Validation    →  Risk Controls    →  Production
+   ↓               ↓                  ↓                       ↓
+Backtests    →  CI / QA       →  Execution Guardrails → Live System
 ```
 
 We welcome contributions in:
@@ -156,8 +126,7 @@ For issues, collaboration, and platform discussions:
 
 ---
 
-Built by systematic traders.
-For systematic traders.
+Built by systematic traders. For systematic traders.
 
 <div align="center">
   <img src="https://img.shields.io/badge/Quantitative-Systems-00D4FF?style=for-the-badge&logo=github&logoColor=white" alt="Quantitative Systems badge" />
